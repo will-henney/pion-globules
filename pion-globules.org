@@ -1,0 +1,12 @@
+* Testing PION for photoevaporating globules
+
+** Pure photoionization tests
+- we are basing this on the cosmological test case, but changing the parameters to be more suitable for the WR nebula knots
+- The distance from the star is about 0.5 pc, which is about 20 arcsec
+- The globule size is about 0.2 arcsec, which is about 0.005 pc
+  - Although this is the current day size, the globule was probably larger in the past
+- The shell density is about 1000 and the i-front density is about 1e4, with the neutral density being about 1e6
+  - Although the original density may have been much lower, probably about 1e4
+- So this is extremely similar to our parameters in the 2009 magnetic globules paper
+- In that case, the evolutionary time was quite long: 100,000 years, which is a bit long for the WR nebula case
+  - We should maybe make the original globules smaller, especially since we need to make them quite closely packed, so there is no room for them to have been very big to start with
