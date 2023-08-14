@@ -1,5 +1,4 @@
 # parameter file for Initial Condition Generation.
-# WJH 2023-08-12: modified for M1-67 type parameters
 # JM 2010: for comparing my code with Iliev et al cosmological
 # code comparison tests.
 #
@@ -13,7 +12,7 @@ solver 3
 # Which ICs to set up
 ics PhotEvap_MultiClumps_FixMass
 # Output FileName Base
-OutputFile    test-single-globule-2d
+OutputFile    RTcompTest7_D2
 
 # Number and type of tracers.
 ntracer 2
