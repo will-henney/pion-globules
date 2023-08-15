@@ -8,7 +8,8 @@
 ndim 2
 coordinates cylindrical
 eqn  euler
-solver 3
+# WJH 2023-08-14 change to Roe solver to try and sharpen things up
+solver 4
 
 # Which ICs to set up
 ics PhotEvap_MultiClumps_FixMass
@@ -17,7 +18,7 @@ OutputFile    test-single-globule-2d
 
 # Number and type of tracers.
 ntracer 2
-chem_code MPv6
+chem_code MPv7
 Tracer000 H1+
 Tracer001 Colour
 InitIons LEAVE
@@ -33,10 +34,10 @@ EP_rad_recombination 1
 EP_update_erg 1
 EP_MP_timestep_limit 1 
 EP_Min_Temperature 50.0
-EP_Max_Temperature 1.0e6
-EP_Hydrogen_MassFrac 1.0
-EP_Helium_MassFrac 0.0  
-EP_Metal_MassFrac  0.0
+EP_Max_Temperature 1.0e4
+EP_Hydrogen_MassFrac 0.75
+EP_Helium_MassFrac 0.24 
+EP_Metal_MassFrac  0.01
 
 
 # Smooth Data by n cells? (n<=0 means no).
@@ -47,9 +48,9 @@ noise -1.0
 ## Grid Parameters
 # Number of gridpoints in each direction (note cells must be cubic!)
 # INT
-NGridX  128
-NGridY   64
-NGridZ  128
+NGridX  256
+NGridY  128
+NGridZ  1
 # Boundaries of Simulation box:
 Xmin  0.0
 Ymin  0.0
@@ -57,7 +58,7 @@ Zmin  0.0
 # Max values of x,y,z
 Xmax  3.085677582e18 # 1 pc
 Ymax  1.542838791e18 # 0.5 pc
-Zmax  1.542838791e18 # 0.5 pc
+Zmax  0e18
 
 # Data Output Path
 OutputPath ./
@@ -66,20 +67,20 @@ OutputFileType silo
 # Output data to file every nth timestep. (n=0 means only at the end).
 OutputFrequency 0
 OutputCriterion 1   # output per n-years=1, per step=0
-OPfreqTime 3.15576e10   # in seconds!!! --> 1000 years
+OPfreqTime 3.15576e9   # in seconds!!! --> 100 years
 
 # Start time
 StartTime 0.0
-FinishTime 3.15576e12 # 100,000 years
+FinishTime 9.467e+11 # 30,000 years
 # Order of Accuracy (1=1st order; 2=2nd order)
 OrderOfAccSpace 2
 OrderOfAccTime  2
 
 # Boundary Conditions
-BC_XN reflecting
-BC_XP outflow
-BC_YN reflecting
-BC_YP outflow
+BC_XN one-way-outflow
+BC_XP one-way-outflow
+BC_YN axisymmetric
+BC_YP one-way-outflow
 BC_Ninternal 0
 
 # ideal gas adiabatic index, gamma {1.6666666666666666, 1.4, 2.0} limits (1,2]
@@ -109,39 +110,6 @@ magval 1
 #####################
 PERC_addrandomclumps NO
 
-PERCempty_xn 0.1 # What fraction of x-dir empty on star-side of grid.
-PERCempty_xp 0.005 # what fraction of x-dir empty on far side of grid.
-PERCempty_yn 0.005 # Fraction of neg. y-dir empty of clumps.
-PERCempty_yp 0.005 # Fraction of pos. y-dir empty of clumps.
-PERCempty_zn 0.005 # Fraction of neg. z-dir empty of clumps.
-PERCempty_zp 0.005 # Fraction of pos. z-dir empty of clumps.
-
-PERC_mean_clump_density 400.0
-PERCrandomseed 19062009
-PERCclump_profile 1  # 0=top-hat, 1=Gaussian
-PERCmin_size 0.03 # as fraction of box size in y-dir.
-PERCmax_size 0.05 # as fraction of box size in y-dir.
-
-## Clump Tracer Values
-PERCcloudTR0 1.0e-6  # cloud first tracer value (ion fraction)
-PERCcloudTR1 1.0   # cloud 2nd tracer value (colour)
-
-PERC_selection_criterion Fixed_Mass_Range
-#PERC_selection_criterion Fixed_Number
-
-## Fixed Number of Clumps Params:
-PERCnumclumps 50
-
-## Fixed Mass Range Clumps Params:
-PERCmin_mass 0.01
-PERCmax_mass 0.03
-
-# clump properties which are now defunct...
-PERCclump_mass 0.9  # put this much mass in clumps (fraction of total mass).
-PERCmin_overdensity 20.0 # defunct
-PERCmax_overdensity 50.0 # defunct
-
-
 ###############################
 # Strategically Placed Clumps #
 ###############################
@@ -151,14 +119,14 @@ PE_SC_addstrategicclumps YES
 PE_SC_numclumps 1
 PE_SC_clump_profile 0 # 0=top-hat,1=Gaussian
 
-PE_SC0_overdensity 199
-PE_SC0_xpos 0.5151515151515151515
+PE_SC0_overdensity 10000
+PE_SC0_xpos 1.0
 PE_SC0_ypos 0.0
-PE_SC0_zpos 0.5
+PE_SC0_zpos 0.0
 PE_SC0_vx  0.0
 PE_SC0_vy  0.0
 PE_SC0_vz  0.0
-PE_SC0_radius 0.2424242424242424242424
+PE_SC0_radius 0.5
 PE_SC0_cloudTR0 0.0
 PE_SC0_cloudTR1 1.0
 PE_SC0_cloudTR2 -1.0
@@ -170,7 +138,7 @@ PE_SC0_cloudTR5 -1.0
 # Ambient Medium Parameters #
 #############################
 PERCradialslope 0.0 # radial slope away from source in background density.
-PERC_ambRO 1.67e-22 # 100 per c.c.
+PERC_ambRO 1.67e-22 # 1000 per c.c.
 PERC_ambPG 1.67e-12 # P_g = rho*kT/mu/m_p
 PERC_ambVX 0.0
 PERC_ambVY 0.0
@@ -195,9 +163,9 @@ RT_Nsources 1
 RT_position_0_0  0.0e18
 RT_position_0_1  0.0e18
 RT_position_0_2  0.0e18
-RT_strength_0    3.82e39 # erg/s for multifrequency source => 1e6 solar luminosities
-RT_Rstar____0    10   # Radius of star in solar radii.
-RT_Tstar____0    1.0e5     # Stellar effective temperature.
+RT_strength_0    3.82e38 # erg/s for multifrequency source => 1e5 solar luminosities
+RT_Rstar____0    3   # Radius of star in solar radii.
+RT_Tstar____0    5.0e4     # Stellar effective temperature.
 RT_src_type_0    1  # 1=single src, 2=diffuse-radiation.
 RT_at_infty_0    0  # 0=no, 1=yes.
 RT_update___0    2  # 1=C2Ray update, 2=New update.

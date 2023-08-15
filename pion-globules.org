@@ -2,13 +2,15 @@
 
 
 ** Options for output formats
-- By default, PION uses the silo format, but there is also teh option of using FITS files, so we will try that since I am more familiar with them
+- By default, PION uses the silo format, but there is also the option of using FITS files, so we will try that since I am more familiar with them
 - We set the parameter
  #+begin_example
    # Output File Type = {text,fits,ftab,both,...}
    OutputFileType both
  #+end_example
  and will see what happens.
+- Turns out I couldn't get the FITS output to work, so I will stick with silo for now
+  - It writes out a separate FITS file fo each processor it seems
  
 ** Pure photoionization tests
 - we are basing this on the cosmological test case, but changing the parameters to be more suitable for the WR nebula knots
@@ -20,3 +22,13 @@
 - So this is extremely similar to our parameters in the 2009 magnetic globules paper
 - In that case, the evolutionary time was quite long: 100,000 years, which is a bit long for the WR nebula case
   - We should maybe make the original globules smaller, especially since we need to make them quite closely packed, so there is no room for them to have been very big to start with
+
+
+*** Issues with the photoionization test
+- I am having trouble getting sensible results, and I think it has to do with the non-ionizing radiation
+- I am getting a heating front in the neutral gas, which causes the globule to expand
+- This is using ~chem_code MPv6~, which was a bad idea since it is H only!
+- So now I am going to retry with MPv5, which supposedly is based on my 2009 paper
+- No, first I will try  MPv7, which is a simple two-temperature interpolation as a function of ionization fraction
+- This has now worked well, so I can save this and try and move on to different parameters, and maybe add the wind
+
