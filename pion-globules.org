@@ -32,3 +32,5 @@
 - No, first I will try  MPv7, which is a simple two-temperature interpolation as a function of ionization fraction
 - This has now worked well, so I can save this and try and move on to different parameters, and maybe add the wind
 
+** Summary of first successful globule test
+- This is now moved to [[file:test-runs/globule-001/test-single-globule-2d.txt]]
