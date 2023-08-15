@@ -57,6 +57,16 @@
             <Field name="tagsVisible" type="bool">false</Field>
             <Field name="tagsMatchAny" type="bool">true</Field>
         </Object>
+        <Object name="Commands">
+            <Field name="x" type="int">818</Field>
+            <Field name="y" type="int">85</Field>
+            <Field name="width" type="int">357</Field>
+            <Field name="height" type="int">523</Field>
+            <Field name="visible" type="bool">true</Field>
+            <Field name="posted" type="bool">false</Field>
+            <Field name="macroStorageMode" type="int">0</Field>
+            <Field name="macroAppend" type="bool">false</Field>
+        </Object>
         <Object name="Expressions">
             <Field name="x" type="int">318</Field>
             <Field name="y" type="int">40</Field>
@@ -163,6 +173,14 @@
             <Field name="y" type="int">25</Field>
             <Field name="width" type="int">474</Field>
             <Field name="height" type="int">578</Field>
+            <Field name="visible" type="bool">false</Field>
+            <Field name="posted" type="bool">true</Field>
+        </Object>
+        <Object name="Curve plot attributes">
+            <Field name="x" type="int">433</Field>
+            <Field name="y" type="int">65</Field>
+            <Field name="width" type="int">486</Field>
+            <Field name="height" type="int">385</Field>
             <Field name="visible" type="bool">false</Field>
             <Field name="posted" type="bool">true</Field>
         </Object>
