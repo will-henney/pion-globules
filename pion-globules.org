@@ -34,3 +34,48 @@
 
 ** Summary of first successful globule test
 - This is now moved to [[file:test-runs/globule-001/test-single-globule-2d.txt]]
+- It is in 2D cylindrical symmetry, given what I give for the boundary conditions
+  #+begin_src conf
+    BC_XN one-way-outflow
+    BC_XP one-way-outflow
+    BC_YN axisymmetric
+    BC_YP one-way-outflow
+  #+end_src
+  - I think that if I had not specified axisymmetric it would have been in slab symmetry, but I need to check that
+- The globule is big and very dense
+  #+begin_src conf
+    PE_SC0_overdensity 10000
+    PE_SC0_xpos 1.0
+    PE_SC0_ypos 0.0
+    PE_SC0_zpos 0.0
+    PE_SC0_vx  0.0
+    PE_SC0_vy  0.0
+    PE_SC0_vz  0.0
+    PE_SC0_radius 0.5
+    ...
+    PERC_ambRO 1.67e-22 # 100 per c.c.
+    PERC_ambPG 1.67e-12 # P_g = rho*kT/mu/m_p
+    ...
+  #+end_src
+  - Strangely, the radius and position seem to be in units of the y dimension of the box, but I am not sure if that is always the case
+  - The globule is like a brick. It's pressure is so high that the photoevaporation flow does not manage to drive a shock into it
+    - In the side and back directions, it is overpressured with respect to the photoevaporation flow, so it expands and a rarefaction wave moves into the globule
+    - This forms an expanding neutral shocked shell
+- The star is something I still don't quite understand
+  #+begin_src conf
+    RT_strength_0    3.82e38 # erg/s for multifrequency source => 1e4 solar luminosities
+    RT_Rstar____0    3   # Radius of star in solar radii.
+    RT_Tstar____0    5.0e4     # Stellar effective temperature.
+  #+end_src
+  - So on the face of it, it is low luminosity (1e4 Lsun), but I think that gets over-ridden by the radius and Teff using Stefan-Boltzmann
+  - Even so, it would be a low luminosity
+  - [ ] I need to work out how to extract the ionized density so I can integrate the emission measure along the symmetry axis and work out what it thinks the ionizing flux is
+- We seem to get shadowing instabilities on the front flanks, which form elephant trunk like features, but these are not well resolved
+
+** Second globule test: globule-002
+- For this one, we will try and get it the right size for the WR knots
+- Still put it at 0.5 pc, but make it smaller:
+  - 1e16 cm = 0.003 pc should be the final radius
+  - So put at 1% of the grid size, which means we will need to use nested grids
+    - So radius is 0.005 pc
+  - Keep the same density, 1e6, so that the column density will be 1.5e22

@@ -14,7 +14,7 @@ solver 4
 # Which ICs to set up
 ics PhotEvap_MultiClumps_FixMass
 # Output FileName Base
-OutputFile    test-single-globule-2d
+OutputFile    globule-002
 
 # Number and type of tracers.
 ntracer 2
@@ -59,6 +59,18 @@ Zmin  0.0
 Xmax  3.085677582e18 # 1 pc
 Ymax  1.542838791e18 # 0.5 pc
 Zmax  0e18
+
+# Nested grid
+grid_nlevels 3
+grid_aspect_ratio_XX 1
+grid_aspect_ratio_YY 1
+grid_aspect_ratio_ZZ 1
+NG_centre_XX 1.542838791e18 # 0.5 pc
+NG_centre_YY 0.0e18
+NG_centre_ZZ 0.0e18
+NG_refine_XX 1
+NG_refine_YY 1
+NG_refine_ZZ 1
 
 # Data Output Path
 OutputPath ./
@@ -126,7 +138,7 @@ PE_SC0_zpos 0.0
 PE_SC0_vx  0.0
 PE_SC0_vy  0.0
 PE_SC0_vz  0.0
-PE_SC0_radius 0.5
+PE_SC0_radius 0.01
 PE_SC0_cloudTR0 0.0
 PE_SC0_cloudTR1 1.0
 PE_SC0_cloudTR2 -1.0
@@ -138,7 +150,7 @@ PE_SC0_cloudTR5 -1.0
 # Ambient Medium Parameters #
 #############################
 PERCradialslope 0.0 # radial slope away from source in background density.
-PERC_ambRO 1.67e-22 # 100 per c.c.
+PERC_ambRO 1.67e-22 # 1000 per c.c.
 PERC_ambPG 1.67e-12 # P_g = rho*kT/mu/m_p
 PERC_ambVX 0.0
 PERC_ambVY 0.0
@@ -163,7 +175,7 @@ RT_Nsources 1
 RT_position_0_0  0.0e18
 RT_position_0_1  0.0e18
 RT_position_0_2  0.0e18
-RT_strength_0    3.82e34 # erg/s for multifrequency source => 1e5 solar luminosities
+RT_strength_0    3.82e38 # erg/s for multifrequency source => 1e5 solar luminosities
 RT_Rstar____0    3   # Radius of star in solar radii.
 RT_Tstar____0    5.0e4     # Stellar effective temperature.
 RT_src_type_0    1  # 1=single src, 2=diffuse-radiation.
