@@ -204,6 +204,7 @@ WIND_0_temp   1.0e4   # effective temperature in K
 WIND_0_Rstr   1.0e12  # radius of surface in cm
 WIND_0_Bsrf   0.0
 WIND_0_TR0    1.0
+WIND_0_TR1    2.0 		# Color of wind
 WIND_0_evofile NOFILE
 WIND_0_t_offset   0.0000    # in (unscaled) years
 WIND_0_t_scalefac 1.0  # Accelerates evolution by this factor (for MS phase).
