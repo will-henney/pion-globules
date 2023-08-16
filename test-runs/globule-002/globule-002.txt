@@ -176,9 +176,9 @@ RT_Nsources 1
 RT_position_0_0  0.0e18
 RT_position_0_1  0.0e18
 RT_position_0_2  0.0e18
-RT_strength_0    3.82e38 # erg/s for multifrequency source => 1e5 solar luminosities
-RT_Rstar____0    3   # Radius of star in solar radii.
-RT_Tstar____0    5.0e4     # Stellar effective temperature.
+RT_strength_0    1.331e39 # erg/s for multifrequency source => 3.5e5 solar luminosities
+RT_Rstar____0    18   # Radius of star in solar radii.
+RT_Tstar____0    3.3e4     # Stellar effective temperature.
 RT_src_type_0    1  # 1=single src, 2=diffuse-radiation.
 RT_at_infty_0    0  # 0=no, 1=yes.
 RT_update___0    2  # 1=C2Ray update, 2=New update.
