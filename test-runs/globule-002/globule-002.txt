@@ -132,7 +132,7 @@ PE_SC_addstrategicclumps YES
 PE_SC_numclumps 1
 PE_SC_clump_profile 0 # 0=top-hat,1=Gaussian
 
-PE_SC0_overdensity 10000
+PE_SC0_overdensity 1000000
 PE_SC0_xpos 1.0
 PE_SC0_ypos 0.0
 PE_SC0_zpos 0.0
@@ -151,8 +151,8 @@ PE_SC0_cloudTR5 -1.0
 # Ambient Medium Parameters #
 #############################
 PERCradialslope 0.0 # radial slope away from source in background density.
-PERC_ambRO 1.67e-22 # 1000 per c.c.
-PERC_ambPG 1.67e-12 # P_g = rho*kT/mu/m_p
+PERC_ambRO 1.67e-24 # 1 per c.c.
+PERC_ambPG 1.67e-14 # P_g = rho*kT/mu/m_p
 PERC_ambVX 0.0
 PERC_ambVY 0.0
 PERC_ambVZ 0.0
