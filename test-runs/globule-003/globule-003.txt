@@ -14,7 +14,7 @@ solver 4
 # Which ICs to set up
 ics PhotEvap_MultiClumps_FixMass
 # Output FileName Base
-OutputFile    globule-002
+OutputFile    globule-003
 
 # Number and type of tracers.
 ntracer 2
@@ -94,7 +94,8 @@ BC_XN one-way-outflow
 BC_XP one-way-outflow
 BC_YN axisymmetric
 BC_YP one-way-outflow
-BC_Ninternal 0
+BC_Ninternal 1
+BC_INTERNAL_000 stellar-wind
 
 # ideal gas adiabatic index, gamma {1.6666666666666666, 1.4, 2.0} limits (1,2]
 GAMMA 1.666666666666666666666
