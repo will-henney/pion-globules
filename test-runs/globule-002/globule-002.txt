@@ -48,8 +48,8 @@ noise -1.0
 ## Grid Parameters
 # Number of gridpoints in each direction (note cells must be cubic!)
 # INT
-NGridX  256
-NGridY  128
+NGridX  128
+NGridY  64
 NGridZ  1
 # Boundaries of Simulation box:
 Xmin  0.0
@@ -68,9 +68,10 @@ grid_aspect_ratio_ZZ 1
 NG_centre_XX 1.542838791e18 # 0.5 pc
 NG_centre_YY 0.0e18
 NG_centre_ZZ 0.0e18
-NG_refine_XX 1
+# Only refine in Y direction
+NG_refine_XX 0
 NG_refine_YY 1
-NG_refine_ZZ 1
+NG_refine_ZZ 0
 
 # Data Output Path
 OutputPath ./
