@@ -52,11 +52,11 @@ NGridX  512
 NGridY  128
 NGridZ  1
 # Boundaries of Simulation box:
-Xmin  0.0
+Xmin  -1.542838791e18 # -0.5 pc 
 Ymin  0.0
 Zmin  0.0
 # Max values of x,y,z
-Xmax  6.171355164e18 # 2 pc
+Xmax  4.628516373e18 # 1.5 pc
 Ymax  1.542838791e18 # 0.5 pc
 Zmax  0e18
 
@@ -65,7 +65,7 @@ grid_nlevels 3
 grid_aspect_ratio_XX 1
 grid_aspect_ratio_YY 1
 grid_aspect_ratio_ZZ 1
-NG_centre_XX 0.0e18 
+NG_centre_XX 0.0e18
 NG_centre_YY 0.0e18
 NG_centre_ZZ 0.0e18
 # Only refine in Y direction
@@ -132,7 +132,7 @@ PE_SC_addstrategicclumps YES
 PE_SC_numclumps 1
 PE_SC_clump_profile 0 # 0=top-hat,1=Gaussian
 
-PE_SC0_overdensity 10000
+PE_SC0_overdensity 1000000
 PE_SC0_xpos 0.8
 PE_SC0_ypos 0.0
 PE_SC0_zpos 0.0
@@ -151,8 +151,8 @@ PE_SC0_cloudTR5 -1.0
 # Ambient Medium Parameters #
 #############################
 PERCradialslope 0.0 # radial slope away from source in background density.
-PERC_ambRO 1.67e-22 # 1000 per c.c.
-PERC_ambPG 1.67e-12 # P_g = rho*kT/mu/m_p
+PERC_ambRO 1.67e-24 # 1 per c.c.
+PERC_ambPG 1.67e-10 # P_g = rho*kT/mu/m_p
 PERC_ambVX 0.0
 PERC_ambVY 0.0
 PERC_ambVZ 0.0
