@@ -52,16 +52,16 @@ NGridX  512
 NGridY  128
 NGridZ  1
 # Boundaries of Simulation box:
-Xmin  -1.542838791e18 # -0.5 pc 
+Xmin  0.0 
 Ymin  0.0
 Zmin  0.0
 # Max values of x,y,z
-Xmax  4.628516373e18 # 1.5 pc
+Xmax  6.171355164e18 # 2 pc
 Ymax  1.542838791e18 # 0.5 pc
 Zmax  0e18
 
 # # Nested grid
-grid_nlevels 3
+grid_nlevels 1
 grid_aspect_ratio_XX 1
 grid_aspect_ratio_YY 1
 grid_aspect_ratio_ZZ 1
@@ -94,7 +94,8 @@ BC_XN one-way-outflow
 BC_XP one-way-outflow
 BC_YN axisymmetric
 BC_YP one-way-outflow
-BC_Ninternal 0
+BC_Ninternal 1
+BC_INTERNAL_000 stellar-wind
 
 # ideal gas adiabatic index, gamma {1.6666666666666666, 1.4, 2.0} limits (1,2]
 GAMMA 1.666666666666666666666
@@ -172,12 +173,12 @@ PERC_ambTR6 0.0
 #########################
 #
 RT_Nsources 1
-# This source has 1e6 ionising photons/sec from infinity
+# This source has stellar parameters of WR124 
 RT_position_0_0  0.0e18
 RT_position_0_1  0.0e18
 RT_position_0_2  0.0e18
 RT_strength_0    1.331e39 # erg/s for multifrequency source => 3.5e5 solar luminosities
-RT_Rstar____0    18   # Radius of star in solar radii.
+RT_Rstar____0    18.0   # Radius of star in solar radii.
 RT_Tstar____0    3.3e4     # Stellar effective temperature.
 RT_src_type_0    1  # 1=single src, 2=diffuse-radiation.
 RT_at_infty_0    0  # 0=no, 1=yes.
@@ -189,7 +190,28 @@ RT_Tau_var__0    0  # opacity variably y_i (this is its index in state vector)
 ########################
 # stellar wind sources #
 ########################
-WIND_NSRC 0
+WIND_NSRC 1
+
+# locate the source at the origin.
+WIND_0_pos0  0.0e18   # X-position of Wind source
+WIND_0_pos1  0.0e18   # Y-position of Wind source
+WIND_0_pos2  0.0e18   # Z-position of Wind source
+WIND_0_radius 2.0e17  # radius of boundary region: ~20 cells for 128^2, 3 levels
+WIND_0_type   0       # Constant wind
+WIND_0_mdot   8e-5  # mass-loss rate in solar masses per year
+WIND_0_vinf   710.0  # wind speed in km/s
+WIND_0_vrot   200.0   # surface rotation in km/s
+WIND_0_temp   1.0e4   # effective temperature in K
+WIND_0_Rstr   1.0e12  # radius of surface in cm
+WIND_0_Bsrf   0.0
+WIND_0_TR0    1.0
+WIND_0_TR1    2.0 		# Color of wind
+WIND_0_evofile NOFILE
+WIND_0_t_offset   0.0000    # in (unscaled) years
+WIND_0_t_scalefac 1.0  # Accelerates evolution by this factor (for MS phase).
+WIND_0_updatefreq 1.0   # in (unscaled) years
+WIND_0_enhance_mdot 0
+WIND_0_xi 1.0
 
 
 
