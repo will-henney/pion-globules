@@ -14,7 +14,7 @@ solver 4
 # Which ICs to set up
 ics PhotEvap_MultiClumps_FixMass
 # Output FileName Base
-OutputFile    globule-004
+OutputFile    globule-004-mpv3
 
 # Number and type of tracers.
 ntracer 2
