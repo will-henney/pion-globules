@@ -153,7 +153,7 @@ PE_SC0_cloudTR5 -1.0
 #############################
 PERCradialslope 0.0 # radial slope away from source in background density.
 PERC_ambRO 1.67e-24 # 1 per c.c.
-PERC_ambPG 1.67e-10 # P_g = rho*kT/mu/m_p
+PERC_ambPG 1.67e-14 # P_g = rho*kT/mu/m_p
 PERC_ambVX 0.0
 PERC_ambVY 0.0
 PERC_ambVZ 0.0
