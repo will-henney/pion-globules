@@ -14,7 +14,7 @@ solver 4
 # Which ICs to set up
 ics PhotEvap_MultiClumps_FixMass
 # Output FileName Base
-OutputFile    globule-004
+OutputFile    globule-004-mpv7
 
 # Number and type of tracers.
 ntracer 2
@@ -48,7 +48,7 @@ noise -1.0
 ## Grid Parameters
 # Number of gridpoints in each direction (note cells must be cubic!)
 # INT
-NGridX  512
+NGridX  256
 NGridY  128
 NGridZ  1
 # Boundaries of Simulation box:
@@ -56,22 +56,22 @@ Xmin  0.0
 Ymin  0.0
 Zmin  0.0
 # Max values of x,y,z
-Xmax  6.171355164e18 # 2 pc
+Xmax  3.085677582e18 # 1 pc
 Ymax  1.542838791e18 # 0.5 pc
 Zmax  0e18
 
-# # Nested grid
-grid_nlevels 1
-grid_aspect_ratio_XX 1
-grid_aspect_ratio_YY 1
-grid_aspect_ratio_ZZ 1
-NG_centre_XX 0.0e18
-NG_centre_YY 0.0e18
-NG_centre_ZZ 0.0e18
-# Only refine in Y direction
-NG_refine_XX 1
-NG_refine_YY 1
-NG_refine_ZZ 1
+# # # Nested grid
+# grid_nlevels 1
+# grid_aspect_ratio_XX 1
+# grid_aspect_ratio_YY 1
+# grid_aspect_ratio_ZZ 1
+# NG_centre_XX 0.0e18
+# NG_centre_YY 0.0e18
+# NG_centre_ZZ 0.0e18
+# # Only refine in Y direction
+# NG_refine_XX 1
+# NG_refine_YY 1
+# NG_refine_ZZ 1
 
 # Data Output Path
 OutputPath ./
