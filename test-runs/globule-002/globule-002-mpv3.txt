@@ -14,11 +14,11 @@ solver 4
 # Which ICs to set up
 ics PhotEvap_MultiClumps_FixMass
 # Output FileName Base
-OutputFile    globule-002
+OutputFile    globule-002-mpv3
 
 # Number and type of tracers.
 ntracer 2
-chem_code MPv7
+chem_code MPv3
 Tracer000 H1+
 Tracer001 Colour
 InitIons LEAVE
@@ -34,7 +34,7 @@ EP_rad_recombination 1
 EP_update_erg 1
 EP_MP_timestep_limit 1 
 EP_Min_Temperature 50.0
-EP_Max_Temperature 1.0e4
+EP_Max_Temperature 1.0e7
 EP_Hydrogen_MassFrac 0.75
 EP_Helium_MassFrac 0.24 
 EP_Metal_MassFrac  0.01
@@ -208,7 +208,7 @@ refvec8 1.0
 refvec9 1.0
 refvec10 1.0
 refvec11 1.0
-refvec12 1.0
+ refvec12 1.0
 refvec13 1.0
 refvec14 1.0
 refvec15 1.0

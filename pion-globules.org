@@ -1,6 +1,14 @@
 * Testing PION for photoevaporating globules
 
 
+** Summary of initial globule and globule/wind tests
+
+*** globule-002
+- Cylindrical symmetry
+- This has a small neutral globule (density = 1e6 pcc), located halfway along the symmetry axis (0.5 pc) from an ionizing star in the bottom left corner
+- Star is designed to mimic WR124 with a relatively soft ionizing spectrum (Teff = 33,000 K, L = 3.3e5 Lsun)
+- Ambient density is 1 pcc
+
 ** Options for output formats
 - By default, PION uses the silo format, but there is also the option of using FITS files, so we will try that since I am more familiar with them
 - We set the parameter
