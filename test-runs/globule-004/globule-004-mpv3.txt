@@ -198,7 +198,8 @@ WIND_0_pos1  0.0e18   # Y-position of Wind source
 WIND_0_pos2  0.0e18   # Z-position of Wind source
 WIND_0_radius 2.0e17  # radius of boundary region: ~20 cells for 128^2, 3 levels
 WIND_0_type   0       # Constant wind
-WIND_0_mdot   8e-5  # mass-loss rate in solar masses per year
+# WJH 2023-08-18 - Reduce wind strength by 100 !!!
+WIND_0_mdot   8e-7  # mass-loss rate in solar masses per year
 WIND_0_vinf   710.0  # wind speed in km/s
 WIND_0_vrot   200.0   # surface rotation in km/s
 WIND_0_temp   1.0e4   # effective temperature in K
