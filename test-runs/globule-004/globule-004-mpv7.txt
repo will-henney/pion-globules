@@ -202,7 +202,10 @@ WIND_0_mdot   8e-5  # mass-loss rate in solar masses per year
 WIND_0_vinf   710.0  # wind speed in km/s
 WIND_0_vrot   200.0   # surface rotation in km/s
 WIND_0_temp   1.0e4   # effective temperature in K
-WIND_0_Rstr   1.0e12  # radius of surface in cm
+# WJH 2023-08-18 - Make the actual star be enormous, so we are not
+# sampling the dense part of the wind, which might be optically thick
+# to ionizing radiation
+WIND_0_Rstr   1e17  # radius of surface in cm
 WIND_0_Bsrf   0.0
 WIND_0_TR0    1.0
 WIND_0_TR1    2.0 		# Color of wind
