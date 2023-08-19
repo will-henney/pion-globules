@@ -70,7 +70,7 @@ Zmax   0.0
 ########################
 ########################
 StartTime  0.000e9
-FinishTime 3.156e13
+FinishTime 3.156e12
 
 OutputPath ./
 OutputFile two-wind-001
@@ -139,7 +139,7 @@ WIND_0_pos1  0.0e18
 WIND_0_pos2  0.0e18
 WIND_0_radius 1e17  # 
 WIND_0_type   0
-WIND_0_mdot   1e-5
+WIND_0_mdot   1e-4
 WIND_0_vinf   50.0
 WIND_0_vrot   0.0
 WIND_0_temp   1e4
