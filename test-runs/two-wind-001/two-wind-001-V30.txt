@@ -73,7 +73,7 @@ StartTime  0.000e9
 FinishTime 3.156e12
 
 OutputPath ./
-OutputFile two-wind-001
+OutputFile two-wind-001-V30
 OutputFileType silo
 OutputCriterion 0
 OutputFrequency 100
