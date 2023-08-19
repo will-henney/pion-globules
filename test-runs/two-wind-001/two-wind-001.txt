@@ -42,8 +42,8 @@ EP_Metal_MassFrac  0.02    # solar metallicity
 
 ########################
 ## Grid Parameters
-NGridX  512
-NGridY  256
+NGridX  256
+NGridY  128
 NGridZ  1
 
 # Boundaries of Simulation box:
@@ -70,13 +70,13 @@ Zmax   0.0
 ########################
 ########################
 StartTime  0.000e9
-FinishTime 3.156e11
+FinishTime 3.156e13
 
 OutputPath ./
 OutputFile two-wind-001
 OutputFileType silo
 OutputCriterion 0
-OutputFrequency 512
+OutputFrequency 100
 OPfreqTime 1.578e99
 ########################
 
@@ -107,8 +107,8 @@ UNIFORM_core_centre_XX 1.1e200
 UNIFORM_core_centre_YY 1.1e200
 UNIFORM_core_centre_ZZ 1.1e200
 
-UNIFORM_ambRO 2.124229813e-24
-UNIFORM_ambPG 2.209037632e-10
+UNIFORM_ambRO 2.124229813e-26
+UNIFORM_ambPG 2.209037632e-12
 UNIFORM_ambVX 0.0
 UNIFORM_ambVY 0.0
 UNIFORM_ambVZ 0.0
@@ -139,11 +139,11 @@ WIND_0_pos1  0.0e18
 WIND_0_pos2  0.0e18
 WIND_0_radius 1e17  # 
 WIND_0_type   0
-WIND_0_mdot   1e-7
+WIND_0_mdot   1e-5
 WIND_0_vinf   50.0
 WIND_0_vrot   0.0
 WIND_0_temp   1e4
-WIND_0_Rstr   6.96e10
+WIND_0_Rstr   1e17
 WIND_0_Bsrf   0.0
 WIND_0_TR0    1.0
 WIND_0_evofile NOFILE
@@ -159,11 +159,11 @@ WIND_1_pos1  0.0e18
 WIND_1_pos2  0.0e18
 WIND_1_radius 1e17  # 
 WIND_1_type   0
-WIND_1_mdot   1e-7
+WIND_1_mdot   1e-4
 WIND_1_vinf   50.0
 WIND_1_vrot   0.0
 WIND_1_temp   1e4
-WIND_1_Rstr   6.96e10
+WIND_1_Rstr   1e17
 WIND_1_Bsrf   0.0
 WIND_1_TR0    1.0
 WIND_1_evofile NOFILE
