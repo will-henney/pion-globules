@@ -7,6 +7,7 @@
 ndim 2
 coordinates cylindrical
 eqn  euler
+GAMMA 1.6666666666666667
 # WJH 2023-08-14 change to Roe solver to try and sharpen things up
 solver 4
 
