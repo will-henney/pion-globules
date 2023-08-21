@@ -9,7 +9,8 @@ ndim 2
 coordinates cylindrical
 eqn  euler
 # WJH 2023-08-14 change to Roe solver to try and sharpen things up
-solver 4
+# WJH 2023-08-21 switch between Roe and HLL deending on context. This should be more robust. 
+solver 9
 
 # Which ICs to set up
 ics PhotEvap_MultiClumps_FixMass
