@@ -135,7 +135,7 @@ PE_SC_numclumps 1
 PE_SC_clump_profile 0 # 0=top-hat,1=Gaussian
 
 PE_SC0_overdensity 100000
-PE_SC0_xpos 2.6		# Distance of about 1e18 cm
+PE_SC0_xpos 0.26		# Distance of about 1e17 cm
 PE_SC0_ypos 0.0
 PE_SC0_zpos 0.0
 PE_SC0_vx  0.0
