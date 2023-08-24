@@ -94,3 +94,20 @@
       : sources located anywhere (including at infinity along one of the
       : coordinate axes).
   - Keep the same density, 1e6, so that the column density will be 1.5e22
+  - 
+
+** globule006 - probably the best static globule
+- This is done at higher resolution and showing a smaller box
+- 1024 x 256
+- 0.5 x 0.125 pc
+- Globule density 1e6
+- Ambient density 1
+- Initial location : 1e18 cm
+- Initial radius: 2e16 cm
+- Initial mass: 0.037 Msun
+  - Which is sort of reasonable
+
+** globule007 - moving globule
+- Now I am going to try starting the globule close to the star, but giving it an initial velocity
+- Current expansion velocity is 20 to 40 km/s, 
+
