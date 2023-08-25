@@ -97,6 +97,18 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">n(H0)</Field>
+        <Field name="definition" type="string">"(1.0 - Tr000_H1p) * Density / 2e-24"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">false</Field>
+        <Field name="operatorName" type="string">__none__</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">operators/ConnectedComponents/MultiMesh</Field>
         <Field name="definition" type="string">"cell_constant(&lt;MultiMesh&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
@@ -181,6 +193,18 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">operators/IntegralCurve/Velocity</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Velocity&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">IntegralCurve</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">operators/LCS/Momentum</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Momentum&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
@@ -197,6 +221,30 @@
         <Field name="definition" type="string">"cell_constant(&lt;Momentum&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">LCS</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/LCS/Velocity</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Velocity&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">LCS</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/LCS/Velocity</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Velocity&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">VectorMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
         <Field name="fromOperator" type="bool">true</Field>
         <Field name="operatorName" type="string">LCS</Field>
@@ -253,6 +301,18 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">operators/Lagrangian/Velocity</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Velocity&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">CurveMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">Lagrangian</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">operators/LimitCycle/Momentum</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Momentum&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
@@ -280,6 +340,18 @@
         <Field name="name" type="string">operators/LimitCycle/Velocity</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Velocity&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">CurveMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">LimitCycle</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/LimitCycle/Velocity</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Velocity&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">ScalarMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
         <Field name="fromOperator" type="bool">true</Field>
@@ -293,6 +365,18 @@
         <Field name="definition" type="string">"cell_constant(&lt;Velocity&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">CurveMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">LimitCycle</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/LimitCycle/Velocity</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Velocity&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
         <Field name="fromOperator" type="bool">true</Field>
         <Field name="operatorName" type="string">LimitCycle</Field>
@@ -303,6 +387,18 @@
     <Object name="Expression">
         <Field name="name" type="string">operators/Lineout/Density</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Density&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">CurveMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">Lineout</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/Lineout/Mach</Field>
+        <Field name="definition" type="string">"cell_constant(Mach, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">CurveMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
@@ -457,6 +553,18 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">operators/Lineout/n(H0)</Field>
+        <Field name="definition" type="string">"cell_constant(n(H0), 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">CurveMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">Lineout</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">operators/ModelFit/distance</Field>
         <Field name="definition" type="string">"point_constant(&lt;MultiMesh&gt;, 0)"</Field>
         <Field name="hidden" type="bool">false</Field>
@@ -505,8 +613,32 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">operators/Poincare/Velocity</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Velocity&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">Poincare</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">operators/StatisticalTrends/Mean/Density</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Density&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Mean/Mach</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Mach&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">ScalarMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
@@ -661,8 +793,32 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Mean/n(H0)</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;n(H0)&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">operators/StatisticalTrends/Residuals/Density</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Density&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Residuals/Mach</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Mach&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">ScalarMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
@@ -817,8 +973,32 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Residuals/n(H0)</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;n(H0)&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">operators/StatisticalTrends/Slope/Density</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Density&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Slope/Mach</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Mach&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">ScalarMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
@@ -973,8 +1153,32 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Slope/n(H0)</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;n(H0)&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">"operators/StatisticalTrends/Std. Dev./Density"</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Density&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">"operators/StatisticalTrends/Std. Dev./Mach"</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Mach&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">ScalarMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
@@ -1129,8 +1333,32 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">"operators/StatisticalTrends/Std. Dev./n(H0)"</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;n(H0)&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">operators/StatisticalTrends/Sum/Density</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Density&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Sum/Mach</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Mach&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">ScalarMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
@@ -1285,8 +1513,32 @@
         <Field name="autoExpression" type="bool">false</Field>
     </Object>
     <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Sum/n(H0)</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;n(H0)&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
         <Field name="name" type="string">operators/StatisticalTrends/Variance/Density</Field>
         <Field name="definition" type="string">"cell_constant(&lt;Density&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Variance/Mach</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;Mach&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">ScalarMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
@@ -1431,6 +1683,18 @@
     <Object name="Expression">
         <Field name="name" type="string">operators/StatisticalTrends/Variance/n(H+)</Field>
         <Field name="definition" type="string">"cell_constant(&lt;n(H+)&gt;, 0.)"</Field>
+        <Field name="hidden" type="bool">false</Field>
+        <Field name="type" type="string">ScalarMeshVar</Field>
+        <Field name="fromDB" type="bool">false</Field>
+        <Field name="fromOperator" type="bool">true</Field>
+        <Field name="operatorName" type="string">StatisticalTrends</Field>
+        <Field name="meshName" type="string"></Field>
+        <Field name="dbName" type="string">__none__</Field>
+        <Field name="autoExpression" type="bool">false</Field>
+    </Object>
+    <Object name="Expression">
+        <Field name="name" type="string">operators/StatisticalTrends/Variance/n(H0)</Field>
+        <Field name="definition" type="string">"cell_constant(&lt;n(H0)&gt;, 0.)"</Field>
         <Field name="hidden" type="bool">false</Field>
         <Field name="type" type="string">ScalarMeshVar</Field>
         <Field name="fromDB" type="bool">false</Field>
