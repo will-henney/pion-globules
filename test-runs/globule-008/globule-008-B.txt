@@ -136,13 +136,14 @@ PE_SC_clump_profile 0 # 0=top-hat,1=Gaussian
 
 # Initial Globule mass is about 0.2 Msun
 PE_SC0_overdensity 100000	# 1e5 pcc
-PE_SC0_xpos 0.05		# Slight shift to break symmetry
-PE_SC0_ypos 0.78		# Distance of about 3e17 cm
+# Now that Y axis extent os 4 times larger, need to divide all positions and sizes by 4
+PE_SC0_xpos 0.02		# Slight shift to break symmetry
+PE_SC0_ypos 0.195		# Distance of about 3e17 cm
 PE_SC0_zpos 0.0
 PE_SC0_vx  0.0
 PE_SC0_vy  15.0e5		# Initial velocity of 15 km/s
 PE_SC0_vz  0.0
-PE_SC0_radius 0.2		#Radius of about 6e16 cm
+PE_SC0_radius 0.05		#Radius of about 6e16 cm
 PE_SC0_cloudTR0 0.0
 PE_SC0_cloudTR1 1.0
 PE_SC0_cloudTR2 -1.0
