@@ -137,7 +137,7 @@ PE_SC_clump_profile 0 # 0=top-hat,1=Gaussian
 # Initial Globule mass is about 0.2 Msun
 PE_SC0_overdensity 100000	# 1e5 pcc
 # Now that Y axis extent os 4 times larger, need to divide all positions and sizes by 4
-PE_SC0_xpos 0.52		# Slight shift from equator to break symmetry
+PE_SC0_xpos 0.13		# Slight shift from equator to break symmetry
 PE_SC0_ypos 0.195		# Distance of about 3e17 cm
 PE_SC0_zpos 0.0
 PE_SC0_vx  0.0
