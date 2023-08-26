@@ -1,0 +1,240 @@
+# parameter file for Initial Condition Generation.
+# WJH 2023-08-12: modified for M1-67 type parameters
+# JM 2010: for comparing my code with Iliev et al cosmological
+# code comparison tests.
+#
+
+## Basic Properties
+ndim 2
+coordinates cylindrical
+eqn  euler
+# WJH 2023-08-14 change to Roe solver to try and sharpen things up
+# WJH 2023-08-21 switch between Roe and HLL deending on context. This should be more robust. 
+solver 9
+
+# Which ICs to set up
+ics PhotEvap_MultiClumps_FixMass
+# Output FileName Base
+OutputFile    globule-008-B
+
+# Number and type of tracers.
+ntracer 2
+chem_code MPv3
+Tracer000 H1+
+Tracer001 Colour
+InitIons LEAVE
+
+# Which physics to use
+EP_dynamics     1
+EP_raytracing   1
+EP_phot_ionisation   1
+EP_cooling      1
+EP_chemistry    1
+EP_coll_ionisation   1
+EP_rad_recombination 1
+EP_update_erg 1
+EP_MP_timestep_limit 1 
+EP_Min_Temperature 50.0
+EP_Max_Temperature 1.0e9
+EP_Hydrogen_MassFrac 0.75
+EP_Helium_MassFrac 0.24 
+EP_Metal_MassFrac  0.01
+
+
+# Smooth Data by n cells? (n<=0 means no).
+smooth -1
+# Add noise at level of f% to Data? (f<=0 means no).
+noise -1.0
+
+## Grid Parameters
+# Number of gridpoints in each direction (note cells must be cubic!)
+# INT
+NGridX  1024
+NGridY  256
+NGridZ  1
+# Boundaries of Simulation box:
+Xmin  0.0 
+Ymin  -1.92854848875e17 # 0.0625 pc
+Zmin  0.0
+# Max values of x,y,z
+Xmax  1.542838791e18 # 0.5 pc
+Ymax  1.92854848875e17 # 0.0625 pc
+Zmax  0e18
+
+# # # Nested grid
+# grid_nlevels 1
+# grid_aspect_ratio_XX 1
+# grid_aspect_ratio_YY 1
+# grid_aspect_ratio_ZZ 1
+# NG_centre_XX 0.0e18
+# NG_centre_YY 0.0e18
+# NG_centre_ZZ 0.0e18
+# # Only refine in Y direction
+# NG_refine_XX 1
+# NG_refine_YY 1
+# NG_refine_ZZ 1
+
+# Data Output Path
+OutputPath ./
+# Output File Type = {text,fits,ftab,both,...}
+OutputFileType silo
+# Output data to file every nth timestep. (n=0 means only at the end).
+OutputFrequency 0
+OutputCriterion 1   # output per n-years=1, per step=0
+OPfreqTime 3.15576e8   # in seconds!!! --> 10 years
+
+# Start time
+StartTime 0.0
+FinishTime 9.467e+11 # 30,000 years
+# Order of Accuracy (1=1st order; 2=2nd order)
+OrderOfAccSpace 2
+OrderOfAccTime  2
+
+# Boundary Conditions
+BC_XN axisymmetric
+BC_XP one-way-outflow
+BC_YN one-way-outflow
+BC_YP one-way-outflow
+BC_Ninternal 1
+BC_INTERNAL_000 stellar-wind
+
+# ideal gas adiabatic index, gamma {1.6666666666666666, 1.4, 2.0} limits (1,2]
+GAMMA 1.666666666666666666666
+
+# CFL coefficient 0<cfl<1
+CFL 0.3
+# Artificial Viscosity 0=None, 1=Falle's linear viscosity.
+ArtificialViscosity 1
+EtaViscosity 0.1
+
+# Code Units
+# Reference systems of units are MKS (i.e. SI), CGS, others?
+units 
+# One code unit is this number of reference units.
+rhoval 1
+lenval 1
+velval 1
+magval 1
+
+##############################################
+## Parameters specific for various problems ##
+##############################################
+
+#####################
+# Add Random Clumps #
+#####################
+PERC_addrandomclumps NO
+
+###############################
+# Strategically Placed Clumps #
+###############################
+# positions and radii are in units of Y-Range
+#
+PE_SC_addstrategicclumps YES
+PE_SC_numclumps 1
+PE_SC_clump_profile 0 # 0=top-hat,1=Gaussian
+
+# Initial Globule mass is about 0.2 Msun
+PE_SC0_overdensity 100000	# 1e5 pcc
+PE_SC0_xpos 0.78		# Distance of about 3e17 cm
+PE_SC0_ypos 0.05		# Slight shift to break symmetry
+PE_SC0_zpos 0.0
+PE_SC0_vx  0.0
+PE_SC0_vy  0.0
+PE_SC0_vz  0.0
+PE_SC0_radius 0.2		#Radius of about 6e16 cm
+PE_SC0_cloudTR0 0.0
+PE_SC0_cloudTR1 1.0
+PE_SC0_cloudTR2 -1.0
+PE_SC0_cloudTR3 -1.0
+PE_SC0_cloudTR4 -1.0
+PE_SC0_cloudTR5 -1.0
+
+#############################
+# Ambient Medium Parameters #
+#############################
+PERCradialslope 0.0 # radial slope away from source in background density.
+PERC_ambRO 1.67e-24 # 1 per c.c.
+PERC_ambPG 1.67e-10 # P_g = rho*kT/mu/m_p
+PERC_ambVX 15.0e5   # Initial velocity of 15 km/s
+PERC_ambVY 0.0
+PERC_ambVZ 0.0
+PERC_ambBX 0.0  #7.43e-5 #2.1210e-5
+PERC_ambBY 0.0  #2.82e-6 # 10 micro-Gauss
+PERC_ambBZ 0.0
+PERC_ambTR0 0.0
+PERC_ambTR1 0.0
+PERC_ambTR2 0.0
+PERC_ambTR3 0.0
+PERC_ambTR4 0.0
+PERC_ambTR5 0.0
+PERC_ambTR6 0.0
+
+#########################
+# radiation source list #
+#########################
+#
+RT_Nsources 1
+# This source has stellar parameters of WR124 
+RT_position_0_0  0.0e18
+RT_position_0_1  0.0e18
+RT_position_0_2  0.0e18
+RT_strength_0    1.331e39 # erg/s for multifrequency source => 3.5e5 solar luminosities
+RT_Rstar____0    18.0   # Radius of star in solar radii.
+RT_Tstar____0    3.3e4     # Stellar effective temperature.
+RT_src_type_0    1  # 1=single src, 2=diffuse-radiation.
+RT_at_infty_0    0  # 0=no, 1=yes.
+RT_update___0    2  # 1=C2Ray update, 2=New update.
+RT_effect___0    3  # 1=UV heating, 2=mono-photoionisation, 3=multi-photoion
+RT_Tau_src__0    10 # RT_OPACITY_MP 10  ///< Get opacity from microphysics.
+RT_Tau_var__0    0  # opacity variably y_i (this is its index in state vector)
+
+########################
+# Stellar wind sources # 
+########################
+WIND_NSRC 1
+
+# locate the source at the origin.
+WIND_0_pos0  0.0e18   # X-position of Wind source
+WIND_0_pos1  0.0e18   # Y-position of Wind source
+WIND_0_pos2  0.0e18   # Z-position of Wind source
+WIND_0_radius 3.013e16  # radius of boundary region: 20 cells of size 1/2048 pc
+WIND_0_type   0       # Constant wind
+WIND_0_mdot   8e-5  # mass-loss rate in solar masses per year
+WIND_0_vinf   710.0  # wind speed in km/s
+WIND_0_vrot   200.0   # surface rotation in km/s
+WIND_0_temp   3.3e4   # effective temperature in K
+WIND_0_Rstr   1.2528e12  # radius of surface in cm, 18 Rsun = 1.2528e12
+WIND_0_Bsrf   0.0
+WIND_0_TR0    1.0
+WIND_0_TR1    2.0 		# Color of wind
+WIND_0_evofile NOFILE
+WIND_0_t_offset   0.0000    # in (unscaled) years
+WIND_0_t_scalefac 1.0  # Accelerates evolution by this factor (for MS phase).
+WIND_0_updatefreq 1.0   # in (unscaled) years
+WIND_0_enhance_mdot 0
+WIND_0_xi 1.0
+
+
+
+
+
+# Reference Vector
+refvec0 1.0e-22  # ~100 particles /cc
+refvec1 1.0e-10  # T ~ 10^4K
+refvec2 1.0e6    # v ~ 100 km/s = 1.e7 cm/s
+refvec3 1.0e6    # v 
+refvec4 1.0e6    # v 
+refvec5 1.0e-6   # B (gauss)
+refvec6 1.0e-6
+refvec7 1.0e-6
+refvec8 1.0
+refvec9 1.0
+refvec10 1.0
+refvec11 1.0
+refvec12 1.0
+refvec13 1.0
+refvec14 1.0
+refvec15 1.0
+
+# Anything else?  

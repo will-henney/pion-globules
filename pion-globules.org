@@ -107,7 +107,40 @@
 - Initial mass: 0.037 Msun
   - Which is sort of reasonable
 
-** globule007 - moving globule
-- Now I am going to try starting the globule close to the star, but giving it an initial velocity
-- Current expansion velocity is 20 to 40 km/s, 
+** globule007 - crushed cloud
+- Original idea was to try starting the globule close to the star, but giving it an initial velocity
+  - Turns out I only gave it 2 km/s instead of 20, but it does not matter
+- I also made the globule 3 times larger and 10 times less dense than 006
+- The initial position was 10 times closer, at 1e17 cm
+- What happened in this case is very interesting:
+  1. The initial R-type front ionizes half of the globule (pure chance!)
+  2. Then the wind slams into the cloud and makes a thin dense shell
+  3. The shell traps the ionization front so that the rest of the cloud recombines
+  4. The neutral part of the shell corrugates with a wavelength of about 1/4 of the initial globule radius
+  5. The shell fragments forming four small globules that are not well resolved, especially the one on the axis
+  6. The little globules develop tails and are accelerated away from the star, mainly by the momentum of the wind
+  7. They do develop ionized sheaths around a neutral core, but I am not sure whether they can really be counted as photoevaporation flows
+  8. Most get completely photoionized, but maintain there identity as ionized clumps that are accelerated away by the ram pressure of the wind at about 100 km/s
+- The simulation crashes eventually, but I am not sure why
 
+** globule008 - three times further from star
+- This one is qualitatively different from 007
+  1. The R-type front only penetrates the skin of the initial globule
+  2. A PE flow starts, and gets back about 10% of the globule radius before the wind hits it
+  3. Again it forms a thin shell, which traps the i-front
+  4. Neutral shell fragments into about 3 pieces
+  5. But most of these get forced down to merge on the symmetry axis
+     - We end up with 3 clumps on axis, due to series of convergence events
+  6. Densest clump is > 1e9
+     - So that is 10,000 times denser than initial globule
+     - So that could be done by two shocks with M ~= 10
+     - Width is only 1 pixel
+     - Mass can be estimated as pi r**2 L rho = pi (1.5e15)**2 2e16 1e9 2e-24 = 2.827e32 g = 0.14 Msun
+     - This is very imprecise, but it is more than half of the initial mass of the globule, suggesting that the total mass loss is not that significant so far
+  7. One remaining off-axis tendril is lower density
+- Eventually this crashes too
+- I am going to try again, but with the cylindrical symmetry axis being the Y axis
+  - So I will be simulating an equatorial torus rather than a cylindrical globule
+  - Hopefully, this will avoid the problem with the concentration on the axis
+  - I will double the size of the extent of the grid in Y, to cover positive and negative values, so we do not have reflective boundary
+  - And shift the globule slightly off the equatorial plane, so as to break the symmetry
