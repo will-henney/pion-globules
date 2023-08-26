@@ -6,7 +6,7 @@
 
 ## Basic Properties
 ndim 2
-coordinates cartesian
+coordinates cylindrical
 eqn  euler
 # WJH 2023-08-14 change to Roe solver to try and sharpen things up
 # WJH 2023-08-21 switch between Roe and HLL deending on context. This should be more robust. 
@@ -49,16 +49,16 @@ noise -1.0
 ## Grid Parameters
 # Number of gridpoints in each direction (note cells must be cubic!)
 # INT
-NGridX  1024
-NGridY  256
+NGridX  256
+NGridY  1024
 NGridZ  1
 # Boundaries of Simulation box:
-Xmin  0.0 
-Ymin  -1.92854848875e17 # 0.0625 pc
+Xmin  -1.92854848875e17 # 0.0625 pc
+Ymin  0.0 
 Zmin  0.0
 # Max values of x,y,z
-Xmax  1.542838791e18 # 0.5 pc
-Ymax  1.92854848875e17 # 0.0625 pc
+Xmax  1.92854848875e17 # 0.0625 pc
+Ymax  1.542838791e18 # 0.5 pc
 Zmax  0e18
 
 # # # Nested grid
@@ -93,7 +93,7 @@ OrderOfAccTime  2
 # Boundary Conditions
 BC_XN one-way-outflow
 BC_XP one-way-outflow
-BC_YN one-way-outflow
+BC_YN axisymmetric
 BC_YP one-way-outflow
 BC_Ninternal 1
 BC_INTERNAL_000 stellar-wind
@@ -136,11 +136,11 @@ PE_SC_clump_profile 0 # 0=top-hat,1=Gaussian
 
 # Initial Globule mass is about 0.2 Msun
 PE_SC0_overdensity 100000	# 1e5 pcc
-PE_SC0_xpos 0.78		# Distance of about 3e17 cm
-PE_SC0_ypos 0.05		# Slight shift to break symmetry
+PE_SC0_xpos 0.05		# Slight shift to break symmetry
+PE_SC0_ypos 0.78		# Distance of about 3e17 cm
 PE_SC0_zpos 0.0
 PE_SC0_vx  0.0
-PE_SC0_vy  0.0
+PE_SC0_vy  15.0e5		# Initial velocity of 15 km/s
 PE_SC0_vz  0.0
 PE_SC0_radius 0.2		#Radius of about 6e16 cm
 PE_SC0_cloudTR0 0.0
@@ -156,7 +156,7 @@ PE_SC0_cloudTR5 -1.0
 PERCradialslope 0.0 # radial slope away from source in background density.
 PERC_ambRO 1.67e-24 # 1 per c.c.
 PERC_ambPG 1.67e-10 # P_g = rho*kT/mu/m_p
-PERC_ambVX 15.0e5   # Initial velocity of 15 km/s
+PERC_ambVX 0.0   
 PERC_ambVY 0.0
 PERC_ambVZ 0.0
 PERC_ambBX 0.0  #7.43e-5 #2.1210e-5
