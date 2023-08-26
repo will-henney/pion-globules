@@ -6,7 +6,7 @@
 
 ## Basic Properties
 ndim 2
-coordinates cylindrical
+coordinates cartesian
 eqn  euler
 # WJH 2023-08-14 change to Roe solver to try and sharpen things up
 # WJH 2023-08-21 switch between Roe and HLL deending on context. This should be more robust. 
@@ -91,7 +91,7 @@ OrderOfAccSpace 2
 OrderOfAccTime  2
 
 # Boundary Conditions
-BC_XN axisymmetric
+BC_XN one-way-outflow
 BC_XP one-way-outflow
 BC_YN one-way-outflow
 BC_YP one-way-outflow
