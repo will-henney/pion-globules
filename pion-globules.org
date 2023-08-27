@@ -123,7 +123,7 @@
   8. Most get completely photoionized, but maintain there identity as ionized clumps that are accelerated away by the ram pressure of the wind at about 100 km/s
 - The simulation crashes eventually, but I am not sure why
 
-** globule008 - three times further from star
+** globule008 and globule008-B - three times further from star
 - This one is qualitatively different from 007
   1. The R-type front only penetrates the skin of the initial globule
   2. A PE flow starts, and gets back about 10% of the globule radius before the wind hits it
@@ -139,8 +139,46 @@
      - This is very imprecise, but it is more than half of the initial mass of the globule, suggesting that the total mass loss is not that significant so far
   7. One remaining off-axis tendril is lower density
 - Eventually this crashes too
-- I am going to try again, but with the cylindrical symmetry axis being the Y axis
+*** The B series: put the globule at the cylindrical equator instead of the pole
+- I am going to try again, but with the globule on the Y axis, not the X axis
   - So I will be simulating an equatorial torus rather than a cylindrical globule
+    - This is because PION is hard-wired so that the X axis is the z cylindrical axis, and Y axis is r
   - Hopefully, this will avoid the problem with the concentration on the axis
-  - I will double the size of the extent of the grid in Y, to cover positive and negative values, so we do not have reflective boundary
+  - I have moved the X extent so that it is centered on zero, which means we are not assuming reflection about the equatorial plane
   - And shift the globule slightly off the equatorial plane, so as to break the symmetry
+- This has worked really well and has run to completion
+  - The initial globule splits into two big clumps, which then subdivide further, giving 3 or 4 evaporating globules during most of the evolution
+    - Some of them merge, and the smallest ones are totally dissipated
+- When the clumps first form at around 5e17 cm, they have following properties
+  - t = 1.1e11 s = 3500 yrs
+  - I-front radius of about 1.3e16 cm
+  - Peak ionized density of about 6e4 pcc
+  - Thickness of ionized layer < r0, so ram pressure dominated
+  - Peak neutral density of about 1e6
+    - But arranged in a ring with thickness h = 5e15 cm
+    - So mass is 4 pi r^2 h n m = 0.01 Msun
+    - This is about 1/20 of the initial globule mass
+- By the time they get to 0.8e18 cm
+  - t = 2.3e11 s = 7300 years
+  - Average speed = (0.8e18 - 5e17) / 1e5 (2.3e11 - 1.1e11) = 25 km/s
+  - I-front radius of 2e15 to 5e15 cm
+  - Peak ionized density about 3e4
+  - Peak neutral density still about 1e6
+- By the time they get to 1.3e18 cm
+  - t = 3.9e11 s = 1.236e+04 years
+  - Average speed (1.3e18 - 0.8e18) / 1e5 (3.9e11 - 2.3e11) = 31 km/s
+    - So speeding up a bit, but still not quite up to the observed speed
+  - Peak ionized density about 2e4
+  - Density of ionized shell about 6000
+  - I-front radius around 4e15, although for the double headed ones, it is as high as 9e15
+  - Shell radius is about 3e16
+- We get some interesting behavior during the evolution
+  - Sometimes the collision between photoevaporation flows of two neighboring globules manages to trap the ionization front and form a "child" globule
+  - But this is quite low density so it is evaporated in a thousand years or less
+  - We see this repeating a couple of times when the big clumps are side by side, but eventually the one on the left, which is slightly lower mass, starts to move ahead of the other, so they stop interacting
+  - Other globule birthing events are due to wiggles in the tail, which can make a little bit bud off and form its own short-lived globule
+- *Conclusions*
+  - These globules are pretty much like the observations, but there are a few problems
+    1. They should move a bit faster
+    2. They should be a bit bigger 
+
