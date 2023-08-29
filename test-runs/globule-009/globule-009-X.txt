@@ -15,7 +15,7 @@ solver 9
 # Which ICs to set up
 ics PhotEvap_MultiClumps_FixMass
 # Output FileName Base
-OutputFile    globule-009-B
+OutputFile    globule-009-X
 
 # Number and type of tracers.
 ntracer 2
