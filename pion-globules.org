@@ -181,4 +181,33 @@
   - These globules are pretty much like the observations, but there are a few problems
     1. They should move a bit faster
     2. They should be a bit bigger 
-
+** globule-009-B - closer in again
+- This is the same as 008-B, but with the globule starting at 1.5e17 cm instead of 3e17 cm
+  - And a larger globule density of 3e5 instead of 1e5
+    - With the same initial radius of about 7e16 cm
+    - So this would be a mass of 0.5 Msun if spherical
+    - But considered as an equatorial ring, it would be 5 Msun
+  - Also, the ambient density is 1e3 instead of 1 pcc, so we might get some more interesting interactions with the ambient gas
+    - [ ] Although really we want to do this better by having a time variable RSG wind to establish the density distribution
+- The idea of this sim was to get bigger clumps accelerated up to faster velocities. I will look at the results for similar times to in the 008-B simulation above
+- At 1.1e11 s = 3500 yrs
+  - Distance of clumps is 4e17 cm, so slightly closer than 008-B
+  - The clump complexes have radius 3e16 cm
+    - But the fragmentation is more advanced than in 008-B and we have sub-clumps that are smaller: r = 1e16 cm or less
+  - The peak ionized density is about 2e5
+    - But density in most of ionized shell is about 1e5
+  - The neutral density peaks are 1 to 2e6
+    - We have 8 of them with sizes about 1e16 by 2e15 cm
+    - So column densities are about 0.5 to 1e22 => AV = 5 to 10
+    - If assume spherical, then each has mass about 0.004 Msun
+    - Although since we have cylindrical symmetry, they are really rings and much more massive: 0.3 Msun
+- At t = 2.3e11 s the densest globules are at 0.7e18 cm
+  - So average speed is  (0.7e18 - 4e17) / 1e5 (2.3e11 - 1.1e11) = 25 km/s, exactly the same as in previous model
+  - I front radius is about 5e15 cm
+- We get to 0.8e18 cm at t = 2.66e11 s
+  - Speed = (0.8e18 - 0.7e18) / 1e5 (2.66e11 - 2.3e11) = 28 km/s
+- We get to 1.0e18 cm at  t = 3.19e11 s
+  - Speed = (1.0e18 - 0.8e18) / 1e5 (3.19e11 - 2.66e11) = 38 km/s
+  - I-front radius of the larger massive fragments = 1.5e16 cm
+- So these speeds and sizes are quite reasonable
+  - That is, they are similar to the observations
