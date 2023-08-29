@@ -211,3 +211,23 @@
   - I-front radius of the larger massive fragments = 1.5e16 cm
 - So these speeds and sizes are quite reasonable
   - That is, they are similar to the observations
+**** Wind channels
+- During the evolution of this model, we see an interesting phenomenon where the wind sorces open a channel between the two major knot complexes
+- Initially, the wind re-accelerates through a nozzle and then drives a new shock in to the ambient medium
+- This develops into a bow shock that propagates as follows
+  |       t |       r |     v |
+  |       s |      cm |  km/s |
+  |---------+---------+-------|
+  | 1.12e11 |  5.9e17 |     0 |
+  | 1.22e11 |  6.7e17 | 80.00 |
+  | 1.36e11 |  7.7e17 | 71.43 |
+  | 1.62e11 |  9.5e17 | 69.23 |
+  | 1.84e11 | 1.10e18 | 68.18 |
+  | 2.09e11 | 1.26e18 | 64.00 |
+  | 2.25e11 | 1.34e18 | 50.00 |
+  #+TBLFM: $3=($2 - @-1$2) / ($1 - @-1$1) $km;f2::@3$3=0
+- For most of the lifetime (of about 3500 years), the wind channel is not straight but meanders a bit, which causes a lot of oblique crossing shocks to redirect the flow
+- And when the bend angle is too large, it forms a perpendicular shock and then reaccelerates
+- Note that the ram pressure driving through the channel is significantly lower than what the unobstructed stellar wind would have at that position
+- Eventually, the channel gets pinched off, so the bow shock loses its "jet" and dissipates
+- When I look at the 
