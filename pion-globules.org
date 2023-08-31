@@ -211,7 +211,7 @@
   - I-front radius of the larger massive fragments = 1.5e16 cm
 - So these speeds and sizes are quite reasonable
   - That is, they are similar to the observations
-**** Wind channels
+*** Wind channels
 - During the evolution of this model, we see an interesting phenomenon where the wind sorces open a channel between the two major knot complexes
 - Initially, the wind re-accelerates through a nozzle and then drives a new shock in to the ambient medium
 - This develops into a bow shock that propagates as follows
@@ -230,4 +230,19 @@
 - And when the bend angle is too large, it forms a perpendicular shock and then reaccelerates
 - Note that the ram pressure driving through the channel is significantly lower than what the unobstructed stellar wind would have at that position
 - Eventually, the channel gets pinched off, so the bow shock loses its "jet" and dissipates
-- When I look at the 
+- When I look at the
+- 
+*** rsync commands to transfer subset of files
+- For example, every tenth output file
+  - Get a list of the files to transfer
+    #+begin_src sh
+      rsync "ghibli.crya.privado:/Users/will/Work/pion-globules/test-runs/globule-009/globule-009-X*.silo" \
+          | cut -f5 -w | awk 'NR % 10 == 0' > files_to_copy
+    #+end_src
+    - The ~cut~ is to take only the file name without all the other garbage from the listing
+    - The ~awk~ command takes every tenth file
+  - Copy over only those files
+    #+begin_src sh
+      rsync -avP --files-from files_to_copy \
+            "ghibli.crya.privado:/Users/will/Work/pion-globules/test-runs/globule-009" .    
+    #+end_src
