@@ -246,3 +246,8 @@
       rsync -avP --files-from files_to_copy \
             "ghibli.crya.privado:/Users/will/Work/pion-globules/test-runs/globule-009" .    
     #+end_src
+** globule-009-BB - Use a weaker wind
+- It turns out that the mass loss rate from the best model in the Crowther 1999 paper is 2e-5 Msun/yr, not 8e-5
+  - This is because their table lists Mdot / sqrt(f), where f = 0.1 is the volume filling factor
+- So I have re-run the globule using that, and it makes a big difference!
+- The instability in the neutral shell is less vigorous and we do not split up into so many parts
